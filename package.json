@@ -6,7 +6,13 @@
   "type": "module",
   "author": "Domin-MND",
   "license": "MIT",
+  "scripts": {
+    "start": "node ."
+  },
   "dependencies": {
     "slova": "^2.2.2"
+  },
+  "engines": {
+    "node": ">=17.0.0"
   }
 }

@@ -18,7 +18,7 @@ In the workspace directory install the packages & then start the script:
 
 ```bash
 $ npm install
-$ node .
+$ npm start
 ```
 
 ## Why not gist?
