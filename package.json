@@ -1,5 +1,5 @@
 {
-  "name": "random-npm-package-name-generator",
+  "name": "npm-name-generator",
   "description": "A small script to generate available npm package names",
   "version": "1.0.0",
   "main": "index.js",
