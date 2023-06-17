@@ -1,0 +1,12 @@
+{
+  "name": "random-npm-package-name-generator",
+  "description": "A small script to generate available npm package names",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "author": "Domin-MND",
+  "license": "MIT",
+  "dependencies": {
+    "slova": "^2.2.2"
+  }
+}
