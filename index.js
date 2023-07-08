@@ -12,7 +12,7 @@ const rl = createInterface({
  * @param {string} packageName - The name of the package to check.
  * @return {Promise<boolean>} Returns a boolean indicating whether the package exists or not.
  */
-const check = async (packageName) => {
+async function check(packageName) {
   const res = await fetch(`https://registry.npmjs.org/${packageName}`);
   const data = await res.json();
   return data?.error === "Not found";
