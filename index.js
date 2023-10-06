@@ -1,7 +1,7 @@
 import { createInterface } from "node:readline/promises";
 import { word } from "slova";
 
-const rl = createInterface({
+const { question, close } = createInterface({
   input: process.stdin,
   output: process.stdout,
 });
@@ -13,8 +13,8 @@ const rl = createInterface({
  * @return {Promise<boolean>} Returns a boolean indicating whether the package exists or not.
  */
 async function check(packageName) {
-  const res = await fetch(`https://registry.npmjs.org/${packageName}`);
-  const data = await res.json();
+  const { json } = await fetch(`https://registry.npmjs.org/${packageName}`);
+  const data = await json();
   return data?.error === "Not found";
 }
 
@@ -42,7 +42,7 @@ async function main(length, quantity) {
     } else {
       console.log("[INFO]", `${wordNames[0]} is not available!`);
     }
-  } catch (e) {
+  } catch {
     console.error("[ERROR]", `${wordNames[0]} returned an error!`);
   }
 
@@ -51,8 +51,8 @@ async function main(length, quantity) {
   return availableNames;
 }
 
-const length = await rl.question("Enter package name length: ");
-const quantity = await rl.question("Enter package name quantity: ");
+const length = await question("Enter package name length: ");
+const quantity = await question("Enter package name quantity: ");
 
 console.log(
   "[INFO]",
@@ -60,4 +60,4 @@ console.log(
 );
 const result = await main(+length, +quantity);
 console.log("[INFO]", "available package names:", result);
-rl.close();
+close();
